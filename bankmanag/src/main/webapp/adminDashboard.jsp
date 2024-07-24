@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            background: linear-gradient(120deg, #D3CCE3 0%, #E9E4F0 100%);
             margin: 0;
             padding: 0;
             min-height: 100vh;
@@ -27,7 +27,7 @@
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         }
         h1 {
-            color: #333;
+            color: #4A235A;
             text-align: center;
             margin-bottom: 2rem;
             font-weight: 300;
@@ -50,10 +50,10 @@
             text-align: center;
             display: inline-block;
         }
-        .btn-primary { background-color: #4CAF50; }
-        .btn-primary:hover { background-color: #45a049; }
-        .btn-danger { background-color: #f44336; }
-        .btn-danger:hover { background-color: #da190b; }
+        .btn-primary { background-color: #8E44AD; }
+        .btn-primary:hover { background-color: #7D3C98; }
+        .btn-danger { background-color: #27AE60; }
+        .btn-danger:hover { background-color: #229954; }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -65,11 +65,11 @@
             border-bottom: 1px solid #ddd;
         }
         th {
-            background-color: #4CAF50;
+            background-color: #8E44AD;
             color: white;
         }
-        tr { background-color: #f8f8f8; }
-        tr:hover { background-color: #f1f1f1; }
+        tr { background-color: #F4ECF7; }
+        tr:hover { background-color: #E8DAEF; }
         .btn-table {
             padding: 0.4rem 1rem;
             font-size: 0.9rem;

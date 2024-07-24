@@ -11,10 +11,10 @@
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #E9E4F0;
         }
         h1 {
-            color: #333;
+            color: #5A3E8C;
             text-align: center;
         }
         table {
@@ -28,7 +28,24 @@
             border-bottom: 1px solid #ddd;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #D4C2E8;
+            color: #5A3E8C;
+        }
+        td {
+            background-color: #F7F3FA;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #5A3E8C;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #4A3271;
         }
     </style>
 </head>

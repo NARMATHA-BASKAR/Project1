@@ -23,7 +23,7 @@ String success = request.getParameter("success");
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background: #f0f0f0;
+            background: #E9E4F0;
             margin: 0;
             padding: 0;
             display: flex;
@@ -41,7 +41,7 @@ String success = request.getParameter("success");
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: #5A3E8C;
             font-weight: 300;
         }
         .message {
@@ -51,22 +51,22 @@ String success = request.getParameter("success");
             text-align: center;
         }
         .message.error {
-            background-color: #f8d7da;
-            color: #721c24;
+            background-color: #F8D7DA;
+            color: #721C24;
         }
         .message.success {
-            background-color: #d4edda;
+            background-color: #D4EDDA;
             color: #155724;
         }
         p {
-            background: #fafafa;
+            background: #F5F3F8;
             padding: 15px;
             border-radius: 5px;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             margin-bottom: 15px;
         }
         form {
-            background: #fafafa;
+            background: #F5F3F8;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -81,7 +81,7 @@ String success = request.getParameter("success");
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
-            border: 1px solid #ccc;
+            border: 1px solid #CCC;
             border-radius: 4px;
             box-sizing: border-box;
             font-size: 14px;
@@ -90,7 +90,7 @@ String success = request.getParameter("success");
             display: block;
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #5A3E8C;
             color: white;
             border: none;
             border-radius: 4px;
@@ -99,13 +99,13 @@ String success = request.getParameter("success");
             font-size: 16px;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #4A3271;
         }
         #logoutForm button {
-            background-color: #dc3545;
+            background-color: #28A745;
         }
         #logoutForm button:hover {
-            background-color: #c82333;
+            background-color: #218838;
         }
         .hidden {
             display: none;

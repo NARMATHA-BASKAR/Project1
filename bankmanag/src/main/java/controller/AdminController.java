@@ -115,7 +115,7 @@ public class AdminController extends HttpServlet {
 //        return word + randomNum;
 //    }
     private String generateAccountNo() {
-        return "Fed" + new Random().nextInt(999999999);
+        return "ACNO" + new Random().nextInt(999999999);
     }
 
     private String generateTempPassword() {

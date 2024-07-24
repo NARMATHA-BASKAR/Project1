@@ -14,6 +14,7 @@
             align-items: center;
             height: 100vh;
             background-color: #f4f4f4;
+            background-color: #d8b8f6;
         }
         .container {
             background-color: #fff;
@@ -23,7 +24,7 @@
             width: 300px;
         }
         h1 {
-            color: #333;
+            color: #8a2be2;
             text-align: center;
             margin-bottom: 30px;
         }
@@ -34,6 +35,7 @@
         label {
             margin-bottom: 5px;
             font-weight: bold;
+            color: #8a2be2;
         }
         input {
             padding: 8px;
@@ -43,7 +45,7 @@
         }
         button {
             padding: 10px;
-            background-color: #007bff;
+            background-color: #8a2be2;
             color: #fff;
             border: none;
             border-radius: 4px;
@@ -52,7 +54,7 @@
             transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #6c21b8;
         }
     </style>
 </head>

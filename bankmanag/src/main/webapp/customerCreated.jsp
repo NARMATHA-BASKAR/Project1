@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Lato', sans-serif;
-            background: linear-gradient(45deg, #141E30, #243B55);
+            background: linear-gradient(45deg, #D3CCE3, #E9E4F0);
             margin: 0;
             padding: 0;
             display: flex;
@@ -28,7 +28,7 @@
             width: 100%;
         }
         h1 {
-            color: #243B55;
+            color: #8E44AD;
             margin-bottom: 2rem;
         }
         p {
@@ -36,17 +36,17 @@
             margin: 0.5rem 0;
         }
         .info {
-            background-color: #f0f0f0;
+            background-color: #F4ECF7;
             border-radius: 10px;
             padding: 1rem;
             margin: 1rem 0;
             font-size: 1.1rem;
-            color: #243B55;
+            color: #8E44AD;
         }
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background-color: #243B55;
+            background-color: #8E44AD;
             color: white;
             text-decoration: none;
             border-radius: 25px;
@@ -54,7 +54,7 @@
             margin-top: 1rem;
         }
         .btn:hover {
-            background-color: #1B2A41;
+            background-color: #7D3C98;
         }
     </style>
 </head>

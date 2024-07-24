@@ -13,7 +13,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background-color: #E9E4F0;
         }
         .login-container {
             background-color: #fff;
@@ -23,7 +23,7 @@
             width: 300px;
         }
         h1 {
-            color: #333;
+            color: #5A3E8C;
             text-align: center;
             margin-bottom: 30px;
         }
@@ -34,6 +34,7 @@
         label {
             margin-bottom: 5px;
             font-weight: bold;
+            color: #5A3E8C;
         }
         input, select {
             padding: 8px;
@@ -43,7 +44,7 @@
         }
         button {
             padding: 10px;
-            background-color: #007bff;
+            background-color: #5A3E8C;
             color: #fff;
             border: none;
             border-radius: 4px;
@@ -52,7 +53,7 @@
             transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #4A3271;
         }
         .error-message {
             color: red;

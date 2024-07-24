@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            background: linear-gradient(135deg, #d8b8f6, #8a2be2);
             color: #333;
             line-height: 1.6;
             padding: 20px;
@@ -22,7 +22,7 @@
         }
         h1 {
             text-align: center;
-            color: #2193b0;
+            color: #8a2be2;
             margin-bottom: 30px;
         }
         form {
@@ -37,7 +37,7 @@
             font-size: 16px;
         }
         input[type="submit"] {
-            background-color: #2193b0;
+            background-color: #8a2be2;
             color: white;
             border: none;
             padding: 12px 20px;
@@ -47,11 +47,11 @@
             transition: background-color 0.3s ease;
         }
         input[type="submit"]:hover {
-            background-color: #1c7430;
+            background-color: #6c21b8;
         }
         label {
             font-weight: bold;
-            color: #2193b0;
+            color: #8a2be2;
         }
     </style>
 </head>

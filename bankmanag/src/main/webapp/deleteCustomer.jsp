@@ -9,10 +9,10 @@
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #E9E4F0;
         }
         h1 {
-            color: #333;
+            color: #5A3E8C;
             text-align: center;
             margin-bottom: 30px;
         }
@@ -28,6 +28,7 @@
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
+            color: #5A3E8C;
         }
         input[type="text"] {
             width: 100%;
@@ -41,7 +42,7 @@
             display: block;
             width: 100%;
             padding: 10px;
-            background-color: #dc3545;
+            background-color: #5A3E8C;
             color: #fff;
             border: none;
             border-radius: 4px;
@@ -50,7 +51,7 @@
             transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #c82333;
+            background-color: #4A3271;
         }
     </style>
 </head>

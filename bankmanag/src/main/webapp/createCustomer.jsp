@@ -6,7 +6,7 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #4facfe, #00f2fe);
+            background: linear-gradient(to right, #D3CCE3, #E9E4F0);
             margin: 0;
             padding: 0;
             display: flex;
@@ -23,7 +23,7 @@
             max-width: 500px;
         }
         h1 {
-            color: #00f2fe;
+            color: #8E44AD;
             text-align: center;
             margin-bottom: 2rem;
         }
@@ -45,12 +45,12 @@
             transition: border-color 0.3s;
         }
         input:focus, select:focus {
-            border-color: #00f2fe;
+            border-color: #8E44AD;
             outline: none;
         }
         button {
             padding: 1rem;
-            background-color: #00f2fe;
+            background-color: #8E44AD;
             color: white;
             border: none;
             border-radius: 4px;
@@ -59,7 +59,7 @@
             transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #00c6d7;
+            background-color: #7D3C98;
         }
         .form-container form > *:not(:last-child) {
             margin-bottom: 1rem;

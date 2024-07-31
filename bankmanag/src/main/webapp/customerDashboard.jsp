@@ -181,6 +181,15 @@ String success = request.getParameter("success");
         <input type="hidden" name="action" value="logout">
         <button type="submit">Logout</button>
     </form>
+    <h2>Close Account</h2>
+    <form action="CloseAccountServlet" method="post">
+        Account Number: <input type="text" name="account_no" required><br>
+        Password: <input type="password" name="password" required><br>
+        <input type="submit" value="Close Account">
+    </form>
+    <form id="logoutForm" action="CustomerController" method="post">
+        <input type="hidden" name="action" value="logout">
+        <button type="submit">Logout</button>
 </div>
 
 </body>

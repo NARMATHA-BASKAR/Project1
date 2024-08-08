@@ -124,20 +124,53 @@ public class CustomerDao {
         }
         return null;
     }           // Method to update customer balance
-        public boolean updateCustomerBalance(String accountNo, double newBalance) {
-            try (Connection connection = DBConnection1.getConnection()) {
-                String query = "UPDATE customer SET balance = ? WHERE account_no = ?";
-                PreparedStatement statement = connection.prepareStatement(query);
-                statement.setDouble(1, newBalance);
-                statement.setString(2, accountNo);
+//        public boolean updateCustomerBalance(String accountNo, double newBalance) {
+//            try (Connection connection = DBConnection1.getConnection()) {
+//                String query = "UPDATE customer SET balance = ? WHERE account_no = ?";
+//                PreparedStatement statement = connection.prepareStatement(query);
+//                statement.setDouble(1, newBalance);
+//                statement.setString(2, accountNo);
+//
+//                int rowsUpdated = statement.executeUpdate();
+//                return rowsUpdated > 0;
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//            return false;
+//        }
+    public boolean updateCustomerBalance(String accountNo, double newBalance) throws Exception {
+        try (Connection connection = DBConnection1.getConnection()) {
+            // First, get the current balance
+            String getBalanceQuery = "SELECT balance FROM customer WHERE account_no = ?";
+            PreparedStatement getBalanceStatement = connection.prepareStatement(getBalanceQuery);
+            getBalanceStatement.setString(1, accountNo);
+            ResultSet resultSet = getBalanceStatement.executeQuery();
+            
+            if (resultSet.next()) {
+                double currentBalance = resultSet.getDouble("balance");
 
-                int rowsUpdated = statement.executeUpdate();
+                // Check if the new balance would be negative
+                if (newBalance < 0) {
+                    throw new Exception("Withdrawal amount is greater than balance");
+                }
+
+                // If the new balance is valid, proceed with the update
+                String updateQuery = "UPDATE customer SET balance = ? WHERE account_no = ?";
+                PreparedStatement updateStatement = connection.prepareStatement(updateQuery);
+                updateStatement.setDouble(1, newBalance);
+                updateStatement.setString(2, accountNo);
+
+                int rowsUpdated = updateStatement.executeUpdate();
                 return rowsUpdated > 0;
-            } catch (SQLException e) {
-                e.printStackTrace();
+            } else {
+                throw new Exception("Account not found");
             }
-            return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return false;
+    }
+
         public List<Transaction> getTransactions(String accountNo) {
             List<Transaction> transactions = new ArrayList<>();
             String query = "SELECT * FROM transaction WHERE account_no = ? ORDER BY transaction_date DESC";
@@ -226,19 +259,36 @@ public class CustomerDao {
 //		        }
 //		        return false;
 //		    }
-		 public boolean deleteCustomer(String accountNo) {
-		        try (Connection connection = DBConnection1.getConnection()) {
-		            String query = "DELETE FROM customer WHERE account_no = ?";
-		            PreparedStatement statement = connection.prepareStatement(query);
-		            statement.setString(1, accountNo);
+		public boolean deleteCustomer(String accountNo) {
+		    try (Connection connection = DBConnection1.getConnection()) {
+		        connection.setAutoCommit(false); // Start transaction
 
-		            int rowsDeleted = statement.executeUpdate();
+		        // Delete related transactions
+		        String deleteTransactionsQuery = "DELETE FROM transaction WHERE account_no = ?";
+		        try (PreparedStatement deleteTransactionsStmt = connection.prepareStatement(deleteTransactionsQuery)) {
+		            deleteTransactionsStmt.setString(1, accountNo);
+		            deleteTransactionsStmt.executeUpdate();
+		        }
+
+		        // Delete customer
+		        String deleteCustomerQuery = "DELETE FROM customer WHERE account_no = ?";
+		        try (PreparedStatement deleteCustomerStmt = connection.prepareStatement(deleteCustomerQuery)) {
+		            deleteCustomerStmt.setString(1, accountNo);
+		            int rowsDeleted = deleteCustomerStmt.executeUpdate();
+		            
+		            connection.commit(); // Commit transaction
 		            return rowsDeleted > 0;
 		        } catch (SQLException e) {
+		            connection.rollback(); // Rollback transaction if any error occurs
 		            e.printStackTrace();
+		            return false;
 		        }
+		    } catch (SQLException e) {
+		        e.printStackTrace();
 		        return false;
-		    }  
+		    }
+		}
+
 		//Methods for addTransaction
 		public static boolean addTransaction(Transaction transaction) throws SQLException {
 		    String sql = "INSERT INTO transaction (account_no, amount, transaction_type, transaction_date) VALUES (?, ?, ?, ?)";

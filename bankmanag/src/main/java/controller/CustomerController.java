@@ -65,7 +65,13 @@ public class CustomerController extends HttpServlet {
             double currentBalance = customer.getBalance();
             double newBalance = currentBalance + amount;
 
-            boolean success = customerDao.updateCustomerBalance(accountNo, newBalance);
+            boolean success = false;
+			try {
+				success = customerDao.updateCustomerBalance(accountNo, newBalance);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
             if (success) {
                 customer.setBalance(newBalance);
@@ -103,7 +109,13 @@ public class CustomerController extends HttpServlet {
             if (currentBalance >= amount) {
                 double newBalance = currentBalance - amount;
 
-                boolean success = customerDao.updateCustomerBalance(accountNo, newBalance);
+                boolean success = false;
+				try {
+					success = customerDao.updateCustomerBalance(accountNo, newBalance);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
                 if (success) {
                     customer.setBalance(newBalance);
@@ -151,8 +163,20 @@ public class CustomerController extends HttpServlet {
                     conn = DBConnection1.getConnection();
                     conn.setAutoCommit(false);
 
-                    boolean successSender = customerDao.updateCustomerBalance(accountNo, senderBalance - amount);
-                    boolean successReceiver = customerDao.updateCustomerBalance(transferAccountNo, receiverBalance + amount);
+                    boolean successSender = false;
+					try {
+						successSender = customerDao.updateCustomerBalance(accountNo, senderBalance - amount);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+                    boolean successReceiver = false;
+					try {
+						successReceiver = customerDao.updateCustomerBalance(transferAccountNo, receiverBalance + amount);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 
                     if (successSender==true && successReceiver==true) {
                         Transaction senderTrans = new Transaction();
